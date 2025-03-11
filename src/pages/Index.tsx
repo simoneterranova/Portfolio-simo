@@ -28,7 +28,6 @@ const Index = () => {
               icon="https://cdn.builder.io/api/v1/image/assets/TEMP/5d41cf189d2141f5c6c1f8178a5e0173ef3e4b54b8212a834222e11987d6d7f3?placeholderIfAbsent=true"
               title="Development"
               description="Hire to outsource your digital marketing efforts, instead of handling in-house can provide your business."
-              isActive
             />
           </div>
         </div>
@@ -105,6 +104,50 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About Me Section */}
+      <section className="bg-[rgba(253,240,233,1)] py-24">
+        <div className="max-w-[1171px] mx-auto px-5">
+          <div className="text-center mb-16">
+            <h2 className="text-[#EF6D58] text-base font-normal leading-8 tracking-[3px] uppercase">
+              About Me
+            </h2>
+            <h3 className="text-[#391400] text-[56px] font-extrabold leading-[64px] tracking-[-1px] mt-5 max-md:text-[40px] max-md:leading-[51px]">
+              Who I Am
+            </h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <img 
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a2c38714444cb191a0edee555e3cd5ac78fa81d2dea1c566a866f95a1266a84?placeholderIfAbsent=true"
+                alt="Simone Terranova Profile" 
+                className="rounded-lg w-full h-auto shadow-lg"
+              />
+            </div>
+            <div className="text-[#391400]">
+              <h4 className="text-3xl font-bold mb-6">Simone Terranova</h4>
+              <p className="text-base leading-8 mb-6">
+                I am a passionate designer and developer with over 5 years of experience in creating beautiful, functional digital experiences.
+              </p>
+              <p className="text-base leading-8 mb-6">
+                My expertise includes UI/UX design, web development, and brand identity creation. I believe in the power of clean, user-centered design to solve complex problems.
+              </p>
+              <p className="text-base leading-8 mb-10">
+                When I'm not designing or coding, you'll find me exploring new technologies, participating in design communities, and seeking inspiration from art and nature.
+              </p>
+              <div className="flex gap-4">
+                <button className="bg-[rgba(239,109,88,1)] text-sm text-white font-black uppercase px-8 py-4 rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors">
+                  Download CV
+                </button>
+                <button className="text-[#391400] text-sm font-black uppercase border border-[rgba(243,209,191,1)] px-8 py-4 rounded-md hover:bg-white transition-colors">
+                  My Work
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="bg-[rgba(40,41,62,1)] py-48 max-md:py-24">
         <div className="max-w-[1140px] mx-auto px-5">
@@ -130,7 +173,7 @@ const Index = () => {
                     className="w-12 h-12 rounded-full"
                     alt="Location"
                   />
-                  <span>2247 Lunetta Street, TX 76301</span>
+                  <span>10125, Torino, TO</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <img
@@ -138,7 +181,7 @@ const Index = () => {
                     className="w-12 h-12 rounded-full"
                     alt="Phone"
                   />
-                  <span>+1 (234) 567-89-00</span>
+                  <span>(+39) 380 902 39 56</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <img
@@ -146,7 +189,7 @@ const Index = () => {
                     className="w-12 h-12 rounded-full"
                     alt="Email"
                   />
-                  <span>info@agency.com</span>
+                  <span>simone.terranova@studenti.polito.it</span>
                 </div>
               </div>
             </div>

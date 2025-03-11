@@ -1,3 +1,4 @@
+
 import { FC } from "react";
 
 interface ServiceCardProps {
@@ -15,11 +16,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
 }) => {
   return (
     <div
-      className={`border flex w-full flex-col text-base text-[#391400] font-normal leading-8 p-12 rounded-md border-[rgba(243,209,191,1)] border-solid ${
-        isActive
-          ? "bg-white shadow-[0px_32px_64px_rgba(57,20,0,0.04)]"
-          : "bg-[rgba(253,240,233,1)]"
-      }`}
+      className="border flex w-full flex-col text-base text-[#391400] font-normal leading-8 p-12 rounded-md border-[rgba(243,209,191,1)] border-solid bg-[rgba(253,240,233,1)]"
     >
       <div className="flex items-stretch gap-6 text-2xl font-bold whitespace-nowrap leading-none">
         <img
