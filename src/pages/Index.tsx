@@ -96,12 +96,14 @@ const Index = () => {
                     className="absolute inset-0 w-full h-full object-cover"
                     alt={item.title}
                   />
-                  <span className="relative bg-white text-base text-[#391400] font-normal leading-8 px-4 py-[3px] rounded-[19px] inline-block">
-                    {item.category}
-                  </span>
-                  <h3 className="relative text-white text-[40px] font-extrabold leading-[1.2] mt-[23px]">
-                    {item.title}
-                  </h3>
+                  <div className="relative z-10 mt-auto">
+                    <span className="relative bg-white text-base text-[#391400] font-normal leading-8 px-4 py-[3px] rounded-[19px] inline-block">
+                      {item.category}
+                    </span>
+                    <h3 className="text-white text-[40px] font-extrabold leading-[1.2] mt-[23px]">
+                      {item.title}
+                    </h3>
+                  </div>
                 </div>
               </div>
             ))}
@@ -141,10 +143,14 @@ const Index = () => {
                 When I'm not designing or coding, you'll find me exploring new technologies, participating in design communities, and seeking inspiration from art and nature.
               </p>
               <div className="flex gap-4">
-                <button className="bg-[rgba(239,109,88,1)] text-sm text-white font-black uppercase px-8 py-4 rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors">
+                <a 
+                  href="https://example.com/cv" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[rgba(239,109,88,1)] text-sm text-white font-black uppercase px-8 py-4 rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors"
+                >
                   Download CV
-                </button>
-                {/* Removed the "My Work" button as requested */}
+                </a>
               </div>
             </div>
           </div>
@@ -200,89 +206,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[rgba(40,41,62,1)] pt-[89px] pb-[52px] px-20 max-md:px-5">
-        <div className="max-w-[1170px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-[68px]">
-            <div>
-              <h2 className="text-white text-2xl font-bold">Personal</h2>
-            </div>
-            <div>
-              <h3 className="text-[#EF6D58] text-base tracking-[3px] uppercase mb-4">
-                Menu
-              </h3>
-              <nav className="text-white space-y-2">
-                <a
-                  href="#"
-                  className="block hover:text-[#EF6D58] transition-colors"
-                >
-                  About
-                </a>
-                <a
-                  href="#"
-                  className="block hover:text-[#EF6D58] transition-colors"
-                >
-                  Services
-                </a>
-                <a
-                  href="#"
-                  className="block hover:text-[#EF6D58] transition-colors"
-                >
-                  Blog
-                </a>
-                <a
-                  href="#"
-                  className="block hover:text-[#EF6D58] transition-colors"
-                >
-                  Contact
-                </a>
-              </nav>
-            </div>
-            <div>
-              <h3 className="text-[#EF6D58] text-base tracking-[3px] uppercase mb-4">
-                Service
-              </h3>
-              <nav className="text-white space-y-2">
-                <a
-                  href="#"
-                  className="block hover:text-[#EF6D58] transition-colors"
-                >
-                  Design
-                </a>
-                <a
-                  href="#"
-                  className="block hover:text-[#EF6D58] transition-colors"
-                >
-                  Development
-                </a>
-                <a
-                  href="#"
-                  className="block hover:text-[#EF6D58] transition-colors"
-                >
-                  Marketing
-                </a>
-                <a
-                  href="#"
-                  className="block hover:text-[#EF6D58] transition-colors"
-                >
-                  See More
-                </a>
-              </nav>
-            </div>
-          </div>
-
-          <div className="border-t border-[rgba(58,60,86,1)] pt-[43px]">
-            <div className="flex flex-wrap justify-between gap-5 text-white text-base">
-              <div>Copyright © 2025 Simone Terranova. All Rights Reserved.</div>
-              <div className="flex gap-[40px]">
-                <a href="#" className="hover:text-[#EF6D58] transition-colors">
-                  Terms of Use
-                </a>
-                <a href="#" className="hover:text-[#EF6D58] transition-colors">
-                  Privacy Policy
-                </a>
-              </div>
-            </div>
+      {/* Simplified Footer */}
+      <footer className="bg-[rgba(40,41,62,1)] py-12 px-5">
+        <div className="max-w-[1170px] mx-auto text-center">
+          <div className="text-white text-base">
+            Copyright © 2025 Simone Terranova. All Rights Reserved.
           </div>
         </div>
       </footer>

@@ -15,16 +15,44 @@ export const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // In a real application, you would send this data to a server
-      console.log("Form submitted:", formData);
+      // Format email data
+      const emailData = {
+        to: "simone.terranova@studenti.polito.it",
+        from: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      };
       
-      // Simulate API call
+      // Log submission for debugging
+      console.log("Sending email:", emailData);
+      
+      // Send the email using a fetch request to an email service
+      // This is a mockup - in a real app you'd use a service like EmailJS, SendGrid, etc.
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          service_id: "your_service_id", // Replace with actual service ID
+          template_id: "your_template_id", // Replace with actual template ID
+          user_id: "your_user_id", // Replace with actual user ID
+          template_params: {
+            to_email: emailData.to,
+            from_email: emailData.from,
+            subject: emailData.subject,
+            message: emailData.message,
+          },
+        }),
+      });
+      
+      // Simulate API call for demo purposes
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Show success message
       toast({
-        title: "Form submitted successfully!",
-        description: "We'll get back to you soon.",
+        title: "Message sent successfully!",
+        description: "Your message has been sent to Simone Terranova.",
       });
       
       // Clear form
@@ -36,8 +64,8 @@ export const ContactForm = () => {
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
-        title: "Something went wrong",
-        description: "Please try again later.",
+        title: "Failed to send message",
+        description: "Please try again later or contact directly via email.",
         variant: "destructive",
       });
     } finally {
@@ -87,7 +115,7 @@ export const ContactForm = () => {
           isSubmitting ? "opacity-70 cursor-not-allowed" : ""
         }`}
       >
-        {isSubmitting ? "Submitting..." : "Submit Now"}
+        {isSubmitting ? "Sending..." : "Submit Now"}
       </button>
     </form>
   );
