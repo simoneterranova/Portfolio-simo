@@ -198,7 +198,7 @@ const Index = () => {
                     className="w-12 h-12 rounded-full"
                     alt="Email"
                   />
-                  <span>simone.terranova@studenti.polito.it</span>
+                  <span>simonet835@gmail.com</span>
                 </div>
               </div>
             </div>

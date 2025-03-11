@@ -17,7 +17,7 @@ export const ContactForm = () => {
     try {
       // Format email data
       const emailData = {
-        to: "simone.terranova@studenti.polito.it",
+        to: "simonet835@gmail.com",
         from: formData.email,
         subject: formData.subject,
         message: formData.message,
