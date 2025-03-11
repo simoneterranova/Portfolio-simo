@@ -1,3 +1,4 @@
+
 import { Hero } from "@/components/sections/Hero";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { ContactForm } from "@/components/ui/ContactForm";
@@ -156,9 +157,6 @@ const Index = () => {
         </div>
       </section>
 
-
-
-
       {/* Contact Section */}
       <section id="contact-section" className="bg-[rgba(40,41,62,1)] py-48 max-md:py-24">
         <div className="max-w-[1140px] mx-auto px-5">
@@ -178,51 +176,30 @@ const Index = () => {
               </p>
 
               <div className="mt-[52px] space-y-4">
-                {/* Location Button - Opens Google Maps */}
-                <a 
-                  href="https://www.google.com/maps/place/Turin,+Metropolitan+City+of+Turin,+Italy/@45.0677304,7.6443319,13z" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 group hover:bg-[rgba(239,109,88,0.1)] p-3 rounded-lg transition-all cursor-pointer"
-                  aria-label="View location on map"
-                >
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center group-hover:bg-[#EF6D58] transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF6D58" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-white transition-colors">
-                      <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                  </div>
-                  <span className="group-hover:text-[#EF6D58] transition-colors">10125, Torino, TO</span>
-                </a>
-
-                {/* Phone Button - Initiates Call */}
-                <a 
-                  href="tel:+393809023956" 
-                  className="flex items-center gap-4 group hover:bg-[rgba(239,109,88,0.1)] p-3 rounded-lg transition-all cursor-pointer"
-                  aria-label="Call me"
-                >
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center group-hover:bg-[#EF6D58] transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF6D58" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-white transition-colors">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                  </div>
-                  <span className="group-hover:text-[#EF6D58] transition-colors">(+39) 380 902 39 56</span>
-                </a>
-
-                {/* Email Button - Opens Mail Client */}
-                <a 
-                  href="mailto:simonet835@gmail.com" 
-                  className="flex items-center gap-4 group hover:bg-[rgba(239,109,88,0.1)] p-3 rounded-lg transition-all cursor-pointer"
-                  aria-label="Send me an email"
-                >
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center group-hover:bg-[#EF6D58] transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF6D58" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-white transition-colors">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                      <polyline points="22,6 12,13 2,6" />
-                    </svg>
-                  </div>
-                  <span className="group-hover:text-[#EF6D58] transition-colors">simonet835@gmail.com</span>
-                </a>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/32a102ca2fb2a4512bf99904e938d75595e48653a5d2ade0f0067039404bdaac?placeholderIfAbsent=true"
+                    className="w-12 h-12 rounded-full"
+                    alt="Location"
+                  />
+                  <span>10125, Torino, TO</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/0265a5d3071b8272dab6d40cee8118505b2e2e3958482ad6c8f02c61ebe3c8c3?placeholderIfAbsent=true"
+                    className="w-12 h-12 rounded-full"
+                    alt="Phone"
+                  />
+                  <span>(+39) 380 902 39 56</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/cc6bc5d3ef4dd7a7ae9c890f743f9daf2de461eb291cad6ddaa0bc3be035a06e?placeholderIfAbsent=true"
+                    className="w-12 h-12 rounded-full"
+                    alt="Email"
+                  />
+                  <span>simonet835@gmail.com</span>
+                </div>
               </div>
             </div>
           </div>
