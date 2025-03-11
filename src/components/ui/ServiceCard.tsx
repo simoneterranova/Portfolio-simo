@@ -33,7 +33,14 @@ export const ServiceCard: FC<ServiceCardProps> = ({
           className="aspect-[1] object-contain w-12 shadow-[0px_3px_9px_rgba(57,20,0,0.08)] shrink-0 rounded-3xl"
           alt="Learn more"
         />
-        <div className="mt-3">Learn More</div>
+        <button 
+          onClick={() => {
+            document.getElementById('portfolio-section')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="mt-3 cursor-pointer hover:text-[#EF6D58] transition-colors"
+        >
+          Learn More
+        </button>
       </div>
     </div>
   );

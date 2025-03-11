@@ -1,5 +1,13 @@
 
 export const Hero = () => {
+  // Function to smoothly scroll to a specific section
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="bg-[rgba(40,41,62,1)] flex w-full flex-col items-center pt-4 pb-[139px] px-20 max-md:max-w-full max-md:pb-[100px] max-md:px-5">
       <div className="w-full max-w-[1171px] -mb-7 max-md:max-w-full max-md:mb-2.5">
@@ -13,10 +21,30 @@ export const Hero = () => {
             <span>Personal</span>
           </div>
           <nav className="flex items-stretch gap-[40px_100px] text-center flex-wrap max-md:max-w-full">
-            <div className="text-white text-base font-normal leading-8 mt-3 max-md:max-w-full">
-              About Services Pricing Blog
+            <div className="text-white text-base font-normal leading-8 mt-3 max-md:max-w-full flex gap-8">
+              <button 
+                onClick={() => scrollToSection('services-section')}
+                className="hover:text-[#EF6D58] transition-colors cursor-pointer"
+              >
+                Services
+              </button>
+              <button 
+                onClick={() => scrollToSection('portfolio-section')}
+                className="hover:text-[#EF6D58] transition-colors cursor-pointer"
+              >
+                Portfolio
+              </button>
+              <button 
+                onClick={() => scrollToSection('about-section')}
+                className="hover:text-[#EF6D58] transition-colors cursor-pointer"
+              >
+                About
+              </button>
             </div>
-            <button className="text-sm text-white font-black uppercase border px-[34px] py-[17px] rounded-md border-[rgba(255,255,255,0.296)] border-solid hover:bg-white hover:text-[rgba(40,41,62,1)] transition-colors">
+            <button 
+              onClick={() => scrollToSection('contact-section')}
+              className="text-sm text-white font-black uppercase border px-[34px] py-[17px] rounded-md border-[rgba(255,255,255,0.296)] border-solid hover:bg-white hover:text-[rgba(40,41,62,1)] transition-colors"
+            >
               Contact
             </button>
           </nav>
@@ -37,7 +65,10 @@ export const Hero = () => {
                   Agency provides a full service range including technical
                   skills, design, business understanding.
                 </p>
-                <button className="bg-[rgba(239,109,88,1)] text-sm text-white font-black text-center uppercase mt-[52px] px-[27px] py-[17px] rounded-md max-md:mt-10 hover:bg-[rgba(239,109,88,0.9)] transition-colors">
+                <button 
+                  onClick={() => scrollToSection('portfolio-section')}
+                  className="bg-[rgba(239,109,88,1)] text-sm text-white font-black text-center uppercase mt-[52px] px-[27px] py-[17px] rounded-md max-md:mt-10 hover:bg-[rgba(239,109,88,0.9)] transition-colors"
+                >
                   See My Work
                 </button>
               </div>

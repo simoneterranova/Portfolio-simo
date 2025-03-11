@@ -9,7 +9,7 @@ const Index = () => {
       <Hero />
 
       {/* Services Section */}
-      <section className="bg-[rgba(253,240,233,1)] flex w-full flex-col items-center pt-[92px] max-md:max-w-full">
+      <section id="services-section" className="bg-[rgba(253,240,233,1)] flex w-full flex-col items-center pt-[92px] max-md:max-w-full">
         <h2 className="text-[#EF6D58] text-center text-base font-normal leading-8 tracking-[3px] uppercase">
           Service
         </h2>
@@ -46,7 +46,7 @@ const Index = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section className="bg-[rgba(40,41,62,1)] w-full py-[94px] max-md:py-[60px]">
+      <section id="portfolio-section" className="bg-[rgba(40,41,62,1)] w-full py-[94px] max-md:py-[60px]">
         <div className="max-w-[1171px] mx-auto px-5">
           <div className="flex justify-between items-center flex-wrap gap-5 mb-16">
             <div>
@@ -57,9 +57,14 @@ const Index = () => {
                 Latest Work
               </h2>
             </div>
-            <button className="text-sm text-white font-black text-center uppercase border px-[31px] py-[17px] rounded-md border-[rgba(255,255,255,0.296)] hover:bg-white hover:text-[rgba(40,41,62,1)] transition-colors">
+            <a 
+              href="https://github.com/simoneterranova" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm text-white font-black text-center uppercase border px-[31px] py-[17px] rounded-md border-[rgba(255,255,255,0.296)] hover:bg-white hover:text-[rgba(40,41,62,1)] transition-colors"
+            >
               Explore More
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -105,7 +110,7 @@ const Index = () => {
       </section>
 
       {/* About Me Section */}
-      <section className="bg-[rgba(253,240,233,1)] py-24">
+      <section id="about-section" className="bg-[rgba(253,240,233,1)] py-24">
         <div className="max-w-[1171px] mx-auto px-5">
           <div className="text-center mb-16">
             <h2 className="text-[#EF6D58] text-base font-normal leading-8 tracking-[3px] uppercase">
@@ -139,9 +144,7 @@ const Index = () => {
                 <button className="bg-[rgba(239,109,88,1)] text-sm text-white font-black uppercase px-8 py-4 rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors">
                   Download CV
                 </button>
-                <button className="text-[#391400] text-sm font-black uppercase border border-[rgba(243,209,191,1)] px-8 py-4 rounded-md hover:bg-white transition-colors">
-                  My Work
-                </button>
+                {/* Removed the "My Work" button as requested */}
               </div>
             </div>
           </div>
@@ -149,7 +152,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-[rgba(40,41,62,1)] py-48 max-md:py-24">
+      <section id="contact-section" className="bg-[rgba(40,41,62,1)] py-48 max-md:py-24">
         <div className="max-w-[1140px] mx-auto px-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <ContactForm />
