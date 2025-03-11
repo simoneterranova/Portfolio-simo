@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
+import emailjs from "@emailjs/browser";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -15,39 +16,26 @@ export const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Format email data
-      const emailData = {
-        to: "simone.terranova@studenti.polito.it",
-        from: formData.email,
+      // Initialize EmailJS with your public key
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+      
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        from_email: formData.email,
+        to_email: "simone.terranova@studenti.polito.it",
         subject: formData.subject,
         message: formData.message,
       };
       
       // Log submission for debugging
-      console.log("Sending email:", emailData);
+      console.log("Sending email:", templateParams);
       
-      // Send the email using a fetch request to an email service
-      // This is a mockup - in a real app you'd use a service like EmailJS, SendGrid, etc.
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          service_id: "your_service_id", // Replace with actual service ID
-          template_id: "your_template_id", // Replace with actual template ID
-          user_id: "your_user_id", // Replace with actual user ID
-          template_params: {
-            to_email: emailData.to,
-            from_email: emailData.from,
-            subject: emailData.subject,
-            message: emailData.message,
-          },
-        }),
-      });
-      
-      // Simulate API call for demo purposes
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send the email using EmailJS
+      await emailjs.send(
+        "YOUR_SERVICE_ID", // Replace with your actual service ID
+        "YOUR_TEMPLATE_ID", // Replace with your actual template ID
+        templateParams
+      );
       
       // Show success message
       toast({
