@@ -1,3 +1,4 @@
+
 export const Hero = () => {
   return (
     <section className="bg-[rgba(40,41,62,1)] flex w-full flex-col items-center pt-4 pb-[139px] px-20 max-md:max-w-full max-md:pb-[100px] max-md:px-5">
@@ -26,7 +27,7 @@ export const Hero = () => {
             <div className="w-[45%] max-md:w-full max-md:ml-0">
               <div className="flex flex-col self-stretch items-stretch text-base font-normal my-auto max-md:max-w-full max-md:mt-10">
                 <span className="text-[#EF6D58] leading-8 tracking-[3px] uppercase">
-                  Gabriel Pires
+                  Simone Terranova
                 </span>
                 <h1 className="text-white text-7xl font-extrabold leading-[80px] tracking-[-2px] mt-6 max-md:max-w-full max-md:text-[40px] max-md:leading-[49px]">
                   The Simple, <br />

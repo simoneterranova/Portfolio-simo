@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+import { toast } from "@/components/ui/use-toast";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -6,11 +8,41 @@ export const ContactForm = () => {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    
+    try {
+      // In a real application, you would send this data to a server
+      console.log("Form submitted:", formData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Show success message
+      toast({
+        title: "Form submitted successfully!",
+        description: "We'll get back to you soon.",
+      });
+      
+      // Clear form
+      setFormData({
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -50,9 +82,12 @@ export const ContactForm = () => {
 
       <button
         type="submit"
-        className="bg-[rgba(239,109,88,1)] text-sm text-white font-black text-center uppercase mt-8 px-[30px] py-[17px] rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors"
+        disabled={isSubmitting}
+        className={`bg-[rgba(239,109,88,1)] text-sm text-white font-black text-center uppercase mt-8 px-[30px] py-[17px] rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors ${
+          isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+        }`}
       >
-        Submit Now
+        {isSubmitting ? "Submitting..." : "Submit Now"}
       </button>
     </form>
   );

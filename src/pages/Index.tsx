@@ -1,6 +1,6 @@
+
 import { Hero } from "@/components/sections/Hero";
 import { ServiceCard } from "@/components/ui/ServiceCard";
-import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { ContactForm } from "@/components/ui/ContactForm";
 
 const Index = () => {
@@ -102,38 +102,6 @@ const Index = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 max-w-[1171px] mx-auto px-5">
-        <h2 className="text-[#EF6D58] text-center text-base font-normal leading-8 tracking-[3px] uppercase">
-          Testimonials
-        </h2>
-        <h3 className="text-[#391400] text-center text-[56px] font-extrabold leading-[64px] tracking-[-1px] mt-5 max-md:text-[40px] max-md:leading-[51px]">
-          What My Clients Saying
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-16">
-          <TestimonialCard
-            content="Outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety."
-            avatar="https://cdn.builder.io/api/v1/image/assets/TEMP/fd1a3ddb838ae3fbb0be420c8269362fa315e46a4db5e131c4b496761770f830?placeholderIfAbsent=true"
-            name="Graham Griffiths"
-            company="Twitor"
-          />
-          <TestimonialCard
-            content="A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions."
-            avatar="https://cdn.builder.io/api/v1/image/assets/TEMP/9ccaaa63308bf50ffd8ee40e70c8fe6920fdacd5b7291f8e1fa15995f526932d?placeholderIfAbsent=true"
-            name="Alan Martí"
-            company="Meta Inc."
-            isActive
-          />
-          <TestimonialCard
-            content="Provide your business with a variety of digital solutions to promote your product or service online."
-            avatar="https://cdn.builder.io/api/v1/image/assets/TEMP/d9d635055b6e5f949a8dc0301b44b6464c7389f80d26bf9131531c368ce344a5?placeholderIfAbsent=true"
-            name="Richardo Kann"
-            company="Photogram"
-          />
         </div>
       </section>
 
@@ -259,7 +227,7 @@ const Index = () => {
 
           <div className="border-t border-[rgba(58,60,86,1)] pt-[43px]">
             <div className="flex flex-wrap justify-between gap-5 text-white text-base">
-              <div>Copyright © 2022 Laaqiq. All Rights Reserved.</div>
+              <div>Copyright © 2025 Simone Terranova. All Rights Reserved.</div>
               <div className="flex gap-[40px]">
                 <a href="#" className="hover:text-[#EF6D58] transition-colors">
                   Terms of Use
