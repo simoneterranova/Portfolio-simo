@@ -76,7 +76,7 @@ export const Hero = () => {
             <div className="w-[55%] ml-5 max-md:w-full max-md:ml-0">
               <img
                 //src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a2c38714444cb191a0edee555e3cd5ac78fa81d2dea1c566a866f95a1266a84?placeholderIfAbsent=true"
-                src= "/simo.png"
+                src= "/public/simo.png"
                 className="aspect-[1.03] object-contain w-full grow rounded-[0px_0px_0px_0px] max-md:max-w-full max-md:mt-10"
                 alt="Hero illustration"
               />
