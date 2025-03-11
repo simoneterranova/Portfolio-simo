@@ -1,4 +1,3 @@
-
 import { Hero } from "@/components/sections/Hero";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { ContactForm } from "@/components/ui/ContactForm";
@@ -176,30 +175,55 @@ const Index = () => {
               </p>
 
               <div className="mt-[52px] space-y-4">
-                <div className="flex items-center gap-4">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/32a102ca2fb2a4512bf99904e938d75595e48653a5d2ade0f0067039404bdaac?placeholderIfAbsent=true"
-                    className="w-12 h-12 rounded-full"
-                    alt="Location"
-                  />
-                  <span>10125, Torino, TO</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/0265a5d3071b8272dab6d40cee8118505b2e2e3958482ad6c8f02c61ebe3c8c3?placeholderIfAbsent=true"
-                    className="w-12 h-12 rounded-full"
-                    alt="Phone"
-                  />
-                  <span>(+39) 380 902 39 56</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/cc6bc5d3ef4dd7a7ae9c890f743f9daf2de461eb291cad6ddaa0bc3be035a06e?placeholderIfAbsent=true"
-                    className="w-12 h-12 rounded-full"
-                    alt="Email"
-                  />
-                  <span>simonet835@gmail.com</span>
-                </div>
+                {/* Location Button - Opens Google Maps */}
+                <a 
+                  href="https://www.google.com/maps/place/Turin,+Metropolitan+City+of+Turin,+Italy/@45.0677304,7.6443319,13z" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 group hover:bg-[rgba(239,109,88,0.1)] p-3 rounded-lg transition-all cursor-pointer"
+                  aria-label="View location on map"
+                >
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center group-hover:bg-[#EF6D58] transition-colors">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/32a102ca2fb2a4512bf99904e938d75595e48653a5d2ade0f0067039404bdaac?placeholderIfAbsent=true"
+                      className="w-6 h-6"
+                      alt="Location"
+                    />
+                  </div>
+                  <span className="group-hover:text-[#EF6D58] transition-colors">10125, Torino, TO</span>
+                </a>
+
+                {/* Phone Button - Initiates Call */}
+                <a 
+                  href="tel:+393809023956" 
+                  className="flex items-center gap-4 group hover:bg-[rgba(239,109,88,0.1)] p-3 rounded-lg transition-all cursor-pointer"
+                  aria-label="Call me"
+                >
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center group-hover:bg-[#EF6D58] transition-colors">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/0265a5d3071b8272dab6d40cee8118505b2e2e3958482ad6c8f02c61ebe3c8c3?placeholderIfAbsent=true"
+                      className="w-6 h-6"
+                      alt="Phone"
+                    />
+                  </div>
+                  <span className="group-hover:text-[#EF6D58] transition-colors">(+39) 380 902 39 56</span>
+                </a>
+
+                {/* Email Button - Opens Mail Client */}
+                <a 
+                  href="mailto:simonet835@gmail.com" 
+                  className="flex items-center gap-4 group hover:bg-[rgba(239,109,88,0.1)] p-3 rounded-lg transition-all cursor-pointer"
+                  aria-label="Send me an email"
+                >
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center group-hover:bg-[#EF6D58] transition-colors">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/cc6bc5d3ef4dd7a7ae9c890f743f9daf2de461eb291cad6ddaa0bc3be035a06e?placeholderIfAbsent=true"
+                      className="w-6 h-6"
+                      alt="Email"
+                    />
+                  </div>
+                  <span className="group-hover:text-[#EF6D58] transition-colors">simonet835@gmail.com</span>
+                </a>
               </div>
             </div>
           </div>
