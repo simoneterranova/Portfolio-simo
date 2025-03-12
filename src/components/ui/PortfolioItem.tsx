@@ -30,11 +30,13 @@ export const PortfolioItem: FC<PortfolioItemProps> = ({
           <span className="relative bg-white text-base text-[#391400] font-normal leading-8 px-4 py-[3px] rounded-[19px] inline-block">
             {domain}
           </span>
-          <h3 className="text-white text-[32px] font-extrabold leading-[1.2] mt-[15px]">
+          <h3 className="text-white text-xl md:text-2xl font-extrabold leading-tight mt-[15px] break-words">
             {title}
           </h3>
-          <p className="text-white text-sm mt-3">{brief}</p>
-          <div className="mt-3 text-[#EF6D58] text-sm">
+          <p className="text-white text-sm mt-3 break-words">
+            {brief}
+          </p>
+          <div className="mt-3 text-[#EF6D58] text-sm break-words">
             <span className="font-semibold">Key Innovation:</span> {innovation}
           </div>
         </div>

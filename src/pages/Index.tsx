@@ -1,7 +1,6 @@
 
 import { Hero } from "@/components/sections/Hero";
 import { ServiceCard } from "@/components/ui/ServiceCard";
-import { ContactForm } from "@/components/ui/ContactForm";
 import { PortfolioItem } from "@/components/ui/PortfolioItem";
 import { 
   Download, 
@@ -25,11 +24,11 @@ const Index = () => {
         <h2 className="text-[#EF6D58] text-center text-base font-normal leading-8 tracking-[3px] uppercase">
           Technical Expertise
         </h2>
-        <h3 className="text-[#391400] text-center text-[56px] font-extrabold leading-[64px] tracking-[-1px] mt-5 max-md:max-w-full max-md:text-[40px] max-md:leading-[51px]">
+        <h3 className="text-[#391400] text-center text-4xl md:text-5xl font-extrabold leading-tight md:leading-[64px] tracking-[-1px] mt-5 px-4 max-w-3xl mx-auto">
           Capabilities
         </h3>
 
-        <div className="w-full max-w-[1171px] mt-16 max-md:max-w-full max-md:mt-10">
+        <div className="w-full max-w-[1171px] mt-16 max-md:mt-10 px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <ServiceCard
               icon="https://cdn.builder.io/api/v1/image/assets/TEMP/7536a91837422362247aa79c66f7364be655e3d409453097ae25df8589c8cc9d?placeholderIfAbsent=true"
@@ -55,7 +54,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="max-w-[1171px] mt-[60px] text-[#391400] text-center max-md:mt-10">
+        <div className="max-w-[1171px] mt-[60px] text-[#391400] text-center px-4 max-md:mt-10">
           <p className="text-base font-normal leading-8">
             Looking for technical implementation expertise in Python, Java, or C++? My programming proficiency spans multiple languages and application domains.
           </p>
@@ -70,7 +69,7 @@ const Index = () => {
               <span className="text-[#EF6D58] text-base font-normal leading-8 tracking-[3px] uppercase block">
                 Portfolio
               </span>
-              <h2 className="text-white text-[56px] font-extrabold leading-none tracking-[-1px] mt-5 max-md:text-[40px]">
+              <h2 className="text-white text-3xl md:text-5xl font-extrabold leading-tight tracking-[-1px] mt-5">
                 Featured Engineering Solutions
               </h2>
             </div>
@@ -145,7 +144,7 @@ const Index = () => {
             <h2 className="text-[#EF6D58] text-base font-normal leading-8 tracking-[3px] uppercase">
               About Me
             </h2>
-            <h3 className="text-[#391400] text-[56px] font-extrabold leading-[64px] tracking-[-1px] mt-5 max-md:text-[40px] max-md:leading-[51px]">
+            <h3 className="text-[#391400] text-3xl md:text-5xl font-extrabold leading-tight md:leading-[64px] tracking-[-1px] mt-5">
               Professional Background
             </h3>
           </div>
@@ -211,42 +210,38 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact-section" className="bg-[rgba(40,41,62,1)] py-48 max-md:py-24">
+      {/* Contact Section - Removed form and adjusted layout */}
+      <section id="contact-section" className="bg-[rgba(40,41,62,1)] py-24">
         <div className="max-w-[1140px] mx-auto px-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <ContactForm />
+          <div className="text-white max-w-2xl mx-auto text-center">
+            <span className="text-[#EF6D58] text-base leading-8 tracking-[3px] uppercase block">
+              Contact
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-[-1px] mt-5 mb-7">
+              Professional Inquiries
+            </h2>
+            <p className="text-base leading-8 mb-10">
+              I welcome discussions regarding technical collaborations, research opportunities, and consulting engagements in IoT development, simulation engineering, or data analytics implementations.
+            </p>
 
-            <div className="text-white">
-              <span className="text-[#EF6D58] text-base leading-8 tracking-[3px] uppercase block">
-                Contact
-              </span>
-              <h2 className="text-[56px] font-extrabold leading-none tracking-[-1px] mt-5 max-md:text-[40px]">
-                Professional Inquiries
-              </h2>
-              <p className="text-base leading-8 mt-7">
-                I welcome discussions regarding technical collaborations, research opportunities, and consulting engagements in IoT development, simulation engineering, or data analytics implementations.
-              </p>
-
-              <div className="mt-[52px] space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-[#EF6D58]" />
-                  </div>
-                  <span>Torino (TO), Italy</span>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
+              <div className="flex items-center gap-4">
+                <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
+                  <MapPin className="w-6 h-6 text-[#EF6D58]" />
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
-                    <Phone className="w-6 h-6 text-[#EF6D58]" />
-                  </div>
-                  <span>(+39) 380 902 39 56</span>
+                <span>Torino (TO), Italy</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
+                  <Phone className="w-6 h-6 text-[#EF6D58]" />
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
-                    <Mail className="w-6 h-6 text-[#EF6D58]" />
-                  </div>
-                  <span>simonet835@gmail.com</span>
+                <span>(+39) 380 902 39 56</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
+                  <Mail className="w-6 h-6 text-[#EF6D58]" />
                 </div>
+                <span>simonet835@gmail.com</span>
               </div>
             </div>
           </div>
