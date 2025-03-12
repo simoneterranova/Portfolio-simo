@@ -1,4 +1,3 @@
-
 import { Hero } from "@/components/sections/Hero";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { PortfolioItem } from "@/components/ui/PortfolioItem";
@@ -210,7 +209,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section - Removed form and adjusted layout */}
+      {/* Contact Section - Enhanced with clickable buttons */}
       <section id="contact-section" className="bg-[rgba(40,41,62,1)] py-24">
         <div className="max-w-[1140px] mx-auto px-5">
           <div className="text-white max-w-2xl mx-auto text-center">
@@ -225,24 +224,49 @@ const Index = () => {
             </p>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
-              <div className="flex items-center gap-4">
+              <a 
+                href="https://maps.app.goo.gl/gX5XZfSW5jwqZLVo7" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 hover:text-[#EF6D58] transition-colors"
+              >
                 <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
                   <MapPin className="w-6 h-6 text-[#EF6D58]" />
                 </div>
                 <span>Torino (TO), Italy</span>
-              </div>
-              <div className="flex items-center gap-4">
+              </a>
+              
+              <a 
+                href="tel:+393809023956" 
+                className="flex items-center gap-4 hover:text-[#EF6D58] transition-colors"
+              >
                 <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
                   <Phone className="w-6 h-6 text-[#EF6D58]" />
                 </div>
                 <span>(+39) 380 902 39 56</span>
-              </div>
-              <div className="flex items-center gap-4">
+              </a>
+              
+              <a 
+                href="mailto:simonet835@gmail.com" 
+                className="flex items-center gap-4 hover:text-[#EF6D58] transition-colors"
+              >
                 <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
                   <Mail className="w-6 h-6 text-[#EF6D58]" />
                 </div>
                 <span>simonet835@gmail.com</span>
-              </div>
+              </a>
+            </div>
+            
+            <div className="flex justify-center mt-12">
+              <a 
+                href="https://calendly.com/simoneterranova" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#EF6D58] text-sm text-white font-black uppercase px-8 py-4 rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors flex items-center gap-2"
+              >
+                <Calendar size={16} />
+                Schedule a Consultation
+              </a>
             </div>
           </div>
         </div>

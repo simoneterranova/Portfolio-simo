@@ -18,7 +18,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
   actionText,
 }) => {
   return (
-    <div className="bg-white p-8 rounded-md flex flex-col h-full">
+    <div className="bg-[rgba(253,240,233,1)] p-8 rounded-md flex flex-col h-full">
       <img src={icon} alt="" className="w-12 h-12 object-contain" />
       <h3 className="text-[#391400] text-xl md:text-2xl font-bold leading-tight mt-5">
         {title}
