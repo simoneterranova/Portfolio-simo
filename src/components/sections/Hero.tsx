@@ -1,5 +1,4 @@
-
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Cpu } from "lucide-react";
 
 export const Hero = () => {
   // Function to smoothly scroll to a specific section
@@ -14,12 +13,8 @@ export const Hero = () => {
     <section className="bg-[rgba(40,41,62,1)] flex w-full flex-col items-center pt-4 pb-[139px] px-20 max-md:max-w-full max-md:pb-[100px] max-md:px-5">
       <div className="w-full max-w-[1171px] -mb-7 max-md:max-w-full max-md:mb-2.5">
         <header className="flex w-full items-stretch gap-5 flex-wrap justify-between max-md:max-w-full">
-          <div className="flex items-stretch gap-[15px] text-2xl text-white font-bold whitespace-nowrap leading-none">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5c14c6972187000ae889da930f881ec151cc5542732e64f39e5666efdf17c47b?placeholderIfAbsent=true"
-              className="aspect-[1.07] object-contain w-[46px] shrink-0"
-              alt="Logo"
-            />
+          <div className="flex items-center gap-[15px] text-2xl text-white font-bold whitespace-nowrap leading-none">
+            <Cpu className="w-[46px] h-[46px] text-[#EF6D58]" />
             <span>Personal</span>
           </div>
           <nav className="flex items-stretch gap-[40px_100px] text-center flex-wrap max-md:max-w-full">

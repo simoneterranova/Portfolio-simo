@@ -82,7 +82,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <PortfolioItem
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/523ff950d7673d8b7dc901f913c977697f1b97a44c0bb00fb4c4d5aeacf2b265?placeholderIfAbsent=true"
+              image="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
               domain="IoT Architecture & ML"
               title="Precision Indoor Positioning System"
               brief="Engineered an intelligent indoor positioning framework leveraging wireless sensor networks and advanced machine learning algorithms to achieve sub-meter location accuracy in complex indoor environments."
@@ -90,7 +90,7 @@ const Index = () => {
               category="Current M.Sc Research"
             />
             <PortfolioItem
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/af718d39718c44a0d416b572d57ec738fc3e328a9fb09bab3c7aeec2cd9a9949?placeholderIfAbsent=true"
+              image="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
               domain="IoT Systems Integration"
               title="Ambient Intelligence Environment"
               brief="Developed a comprehensive smart environment solution that dynamically optimizes ambient parameters based on real-time sensor data and user preferences."
@@ -98,7 +98,7 @@ const Index = () => {
               category="Project"
             />
             <PortfolioItem
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/6e39076dd89b58070f8ca48f9ca347e06d9b2a4abff62960f83f75bd4ca1af62?placeholderIfAbsent=true"
+              image="https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
               domain="Smart Grid Systems"
               title="Intelligent Energy Trading Platform"
               brief="Created an automated energy trading system utilizing real-time grid data, advanced forecasting models, and optimization algorithms to maximize efficiency and value."
@@ -106,7 +106,7 @@ const Index = () => {
               category="Project"
             />
             <PortfolioItem
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/523ff950d7673d8b7dc901f913c977697f1b97a44c0bb00fb4c4d5aeacf2b265?placeholderIfAbsent=true"
+              image="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
               domain="Healthcare Technology"
               title="Telemedicine Diagnostic Platform"
               brief="Architected a specialized telemedicine solution incorporating secure data transmission, image analysis algorithms, and remote consultation functionality for dermatological applications."
@@ -114,7 +114,7 @@ const Index = () => {
               category="Project"
             />
             <PortfolioItem
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/af718d39718c44a0d416b572d57ec738fc3e328a9fb09bab3c7aeec2cd9a9949?placeholderIfAbsent=true"
+              image="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
               domain="Operations Research"
               title="High-Efficiency Logistics Simulation"
               brief="Engineered a comprehensive simulation model for baggage handling systems, implementing custom optimization algorithms to reduce transfer times by 23%."
@@ -122,7 +122,7 @@ const Index = () => {
               category="Project"
             />
             <PortfolioItem
-              image="https://cdn.builder.io/api/v1/image/assets/TEMP/6e39076dd89b58070f8ca48f9ca347e06d9b2a4abff62960f83f75bd4ca1af62?placeholderIfAbsent=true"
+              image="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
               domain="Electronic Systems Engineering"
               title="Precision Instrumentation Enhancement"
               brief="Designed and implemented a specialized hardware filter solution for atomic force microscopy, significantly enhancing signal quality and measurement resolution."
