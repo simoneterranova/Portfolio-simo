@@ -225,7 +225,7 @@ const Index = () => {
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
               <a 
-                href="https://maps.app.goo.gl/gX5XZfSW5jwqZLVo7" 
+                href="https://maps.app.goo.gl/SHYTEUv5g3JNzDj67" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 hover:text-[#EF6D58] transition-colors"
