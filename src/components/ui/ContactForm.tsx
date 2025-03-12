@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
+import { Send } from "lucide-react";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ export const ContactForm = () => {
     try {
       // Format email data
       const emailData = {
-        to: "simonet835@gmail.com",
+        to: "simone.terranova@studenti.polito.it",
         from: formData.email,
         subject: formData.subject,
         message: formData.message,
@@ -52,7 +53,7 @@ export const ContactForm = () => {
       // Show success message
       toast({
         title: "Message sent successfully!",
-        description: "Your message has been sent to Simone Terranova.",
+        description: `Your message has been sent to ${emailData.to}`,
       });
       
       // Clear form
@@ -79,15 +80,19 @@ export const ContactForm = () => {
       className="bg-white flex w-full flex-col items-stretch text-base text-[#391400] font-normal mx-auto px-12 py-[53px] rounded-md"
     >
       <h2 className="text-[#391400] text-2xl font-bold leading-none">
-        Get In Touch
+        Professional Inquiries
       </h2>
+      
+      <p className="mt-4 text-[#391400]">
+        I welcome discussions regarding technical collaborations, research opportunities, and consulting engagements in IoT development, simulation engineering, or data analytics implementations.
+      </p>
 
       <input
         type="email"
         value={formData.email}
         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        placeholder="Your email"
-        className="bg-white border leading-8 mt-[23px] px-4 py-2 rounded-md border-[rgba(243,209,191,1)] border-solid"
+        placeholder="Your Email (Required)"
+        className="bg-white border leading-8 mt-6 px-4 py-2 rounded-md border-[rgba(243,209,191,1)] border-solid"
         required
       />
 
@@ -95,7 +100,7 @@ export const ContactForm = () => {
         type="text"
         value={formData.subject}
         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-        placeholder="Subject"
+        placeholder="Subject (Project Type/Inquiry Category)"
         className="bg-white border leading-8 mt-4 px-4 py-2 rounded-md border-[rgba(243,209,191,1)] border-solid"
         required
       />
@@ -103,7 +108,7 @@ export const ContactForm = () => {
       <textarea
         value={formData.message}
         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        placeholder="Message"
+        placeholder="Message Details"
         className="bg-white border leading-8 mt-4 px-4 py-2 h-32 rounded-md border-[rgba(243,209,191,1)] border-solid resize-none"
         required
       />
@@ -111,11 +116,12 @@ export const ContactForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`bg-[rgba(239,109,88,1)] text-sm text-white font-black text-center uppercase mt-8 px-[30px] py-[17px] rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors ${
+        className={`bg-[rgba(239,109,88,1)] text-sm text-white font-black text-center uppercase mt-8 px-[30px] py-[17px] rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors flex items-center gap-2 justify-center ${
           isSubmitting ? "opacity-70 cursor-not-allowed" : ""
         }`}
       >
-        {isSubmitting ? "Sending..." : "Submit Now"}
+        {isSubmitting ? "Sending..." : "Submit Inquiry"}
+        <Send size={16} />
       </button>
     </form>
   );

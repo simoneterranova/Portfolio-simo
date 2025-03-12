@@ -1,4 +1,6 @@
 
+import { ArrowRight } from "lucide-react";
+
 export const Hero = () => {
   // Function to smoothly scroll to a specific section
   const scrollToSection = (sectionId: string) => {
@@ -58,18 +60,18 @@ export const Hero = () => {
                   Simone Terranova
                 </span>
                 <h1 className="text-white text-7xl font-extrabold leading-[80px] tracking-[-2px] mt-6 max-md:max-w-full max-md:text-[40px] max-md:leading-[49px]">
-                  The Simple, <br />
-                  Clean Design
+                  ICT Engineer
                 </h1>
                 <p className="text-white leading-8 mr-6 mt-6 max-md:max-w-full max-md:mr-2.5">
-                  Agency provides a full service range including technical
-                  skills, design, business understanding.
+                  Pioneering intelligent solutions through IoT integration, advanced simulation systems, and data-driven analytics.
+                  Transforming complex technical challenges into elegant, efficient solutions.
                 </p>
                 <button 
                   onClick={() => scrollToSection('portfolio-section')}
-                  className="bg-[rgba(239,109,88,1)] text-sm text-white font-black text-center uppercase mt-[52px] px-[27px] py-[17px] rounded-md max-md:mt-10 hover:bg-[rgba(239,109,88,0.9)] transition-colors"
+                  className="bg-[rgba(239,109,88,1)] text-sm text-white font-black text-center uppercase mt-[52px] px-[27px] py-[17px] rounded-md max-md:mt-10 hover:bg-[rgba(239,109,88,0.9)] transition-colors flex items-center gap-2 w-fit"
                 >
-                  See My Work
+                  Discover My Innovation Portfolio
+                  <ArrowRight size={16} />
                 </button>
               </div>
             </div>
@@ -77,7 +79,7 @@ export const Hero = () => {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a2c38714444cb191a0edee555e3cd5ac78fa81d2dea1c566a866f95a1266a84?placeholderIfAbsent=true"
                 className="aspect-[1.03] object-contain w-full grow rounded-[0px_0px_0px_0px] max-md:max-w-full max-md:mt-10"
-                alt="Hero illustration"
+                alt="Technology illustration highlighting connectivity concepts"
               />
             </div>
           </div>
