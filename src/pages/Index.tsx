@@ -34,21 +34,18 @@ const Index = () => {
               title="IoT Ecosystem Development"
               description="Architecting comprehensive Internet of Things solutions that seamlessly connect physical and digital worlds through intelligent sensor networks and responsive systems."
               differentiation="Each implementation is engineered for scalability, security, and real-world application."
-              actionText="Explore IoT Solutions"
             />
             <ServiceCard
               icon="https://cdn.builder.io/api/v1/image/assets/TEMP/5d41cf189d2141f5c6c1f8178a5e0173ef3e4b54b8212a834222e11987d6d7f3?placeholderIfAbsent=true"
               title="Simulation Engineering"
               description="Designing sophisticated simulation frameworks that model complex systems, identify inefficiencies, and implement optimization algorithms for measurable performance improvements."
               differentiation="Combining mathematical precision with practical application to deliver tangible efficiency gains."
-              actionText="Review Optimization Case Studies"
             />
             <ServiceCard
               icon="https://cdn.builder.io/api/v1/image/assets/TEMP/7536a91837422362247aa79c66f7364be655e3d409453097ae25df8589c8cc9d?placeholderIfAbsent=true"
               title="Advanced Analytics & ML"
               description="Transforming raw data into actionable intelligence through custom machine learning models and comprehensive analytical frameworks."
               differentiation="Focused on delivering predictive capabilities and decision support systems that drive operational excellence."
-              actionText="Examine Analytics Projects"
             />
           </div>
         </div>
