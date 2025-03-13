@@ -27,6 +27,27 @@ A modern, responsive portfolio website built with React and TypeScript, featurin
 - [Lucide Icons](https://lucide.dev/) - Icons
 - [Next Themes](https://github.com/pacocoursey/next-themes) - Theme Management
 
+## Technical Implementation
+
+### Components Structure
+```
+src/
+├── components/
+│   ├── sections/       # Main page sections
+│   │   ├── Hero.tsx
+│   │   └── AboutMe.tsx
+│   └── ui/            # Reusable UI components
+│       ├── ServiceCard.tsx
+│       ├── PortfolioItem.tsx
+│       └── ContactForm.tsx
+```
+
+### State Management
+- Theme management using next-themes
+- Mobile detection with custom hook
+- Section visibility tracking
+- Form state handling with React Hook Form
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -38,12 +59,12 @@ A modern, responsive portfolio website built with React and TypeScript, featurin
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/simoneterranova/Portfolio-simo.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd [repository-name]
+cd Portfolio-simo
 ```
 
 3. Install dependencies:
@@ -90,22 +111,27 @@ You can also deploy directly using the Lovable platform:
 2. Navigate to your project
 3. Click Share -> Publish
 
-## 🎨 Customization
+## Performance Optimizations
 
-### Themes
-- Edit `src/styles/theme.css` to modify theme variables
-- Customize colors in `tailwind.config.ts`
+1. Image Optimizations:
+   - WebP format for profile image
+   - Lazy loading for portfolio images
+   - Optimized image dimensions
 
-### Content
-- Update portfolio items in `src/pages/Index.tsx`
-- Modify sections in `src/components/sections/`
+2. Code Splitting:
+   - Component-level code splitting
+   - Lazy loading of sections
+   - Dynamic imports for heavy components
+
+3. Animation Performance:
+   - GPU-accelerated animations
+   - Debounced scroll handlers
+   - Optimized animation triggers
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License
 
 ## 📬 Contact
 
-Simone Terranova - [Your Contact Information]
-
-Project Link: [Your Repository URL]
+Simone Terranova
