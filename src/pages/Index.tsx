@@ -1,6 +1,9 @@
 import { Hero } from "@/components/sections/Hero";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { PortfolioItem } from "@/components/ui/PortfolioItem";
+import { AboutMe } from "@/components/sections/AboutMe";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { useSectionTransition } from "@/hooks/use-section-transition";
 import { 
   Download, 
   Calendar, 
@@ -10,207 +13,197 @@ import {
   ExternalLink, 
   Cpu, 
   Activity, 
-  Database 
+  Database,
+  Github
 } from "lucide-react";
 
 const Index = () => {
+  // Create refs and visibility states for each section but initialize as true for immediate visibility
+  const [portfolioRef, portfolioVisible] = useSectionTransition(0.1);
+  const [capabilitiesRef, capabilitiesVisible] = useSectionTransition(0.1);
+  const [contactRef, contactVisible] = useSectionTransition(0.1);
+  
+  // Function to smoothly scroll to a specific section
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <main className="bg-white overflow-hidden">
+    <main className="bg-[var(--main-bg-color)] overflow-hidden">
+      {/* HERO Section */}
       <Hero />
 
-      {/* Services Section */}
-      <section id="services-section" className="bg-[rgba(253,240,233,1)] flex w-full flex-col items-center pt-[92px] max-md:max-w-full pb-20">
-        <h2 className="text-[#EF6D58] text-center text-base font-normal leading-8 tracking-[3px] uppercase">
-          Technical Expertise
-        </h2>
-        <h3 className="text-[#391400] text-center text-4xl md:text-5xl font-extrabold leading-tight md:leading-[64px] tracking-[-1px] mt-5 px-4 max-w-3xl mx-auto">
-          Capabilities
-        </h3>
+      {/* BACKGROUND Section */}
+      <AboutMe />
 
-        <div className="w-full max-w-[1171px] mt-16 max-md:mt-10 px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* PORTFOLIO Section */}
+      <section 
+        id="portfolio-section" 
+        className="themed-section w-full py-[94px] max-md:py-[60px]"
+        ref={portfolioRef as React.RefObject<HTMLDivElement>}
+      >
+        {/* Use a simpler approach without conditional section visibility */}
+        <div className="max-w-[1171px] mx-auto px-5">
+          {/* Centered Portfolio Heading */}
+          <div className="text-center mb-16">
+            <span className="text-[var(--accent-color)] text-base font-normal leading-8 tracking-[3px] uppercase block">
+              Portfolio
+            </span>
+            <h2 className="text-[var(--text-color)] text-3xl md:text-5xl font-extrabold leading-tight tracking-[-1px] mt-5">
+              Featured Engineering Solutions
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
+            {/* Portfolio items */}
+            <PortfolioItem
+              image="/UIP_IMAGE.png"
+              domain="IoT Architecture & ML"
+              title="Indoor Positioning System"
+              brief="Engineered an intelligent indoor positioning framework leveraging Bluetooth Low Energy, ESP32, BLE tags and machine learning algorithms to enhance location accuracy in complex indoor environments."
+              innovation="Implementation of Machine Learning techniques to overcome traditional positioning limitations."
+              category="M.Sc Research"
+            />
+            <PortfolioItem
+              image="/IOT_IMAGE.png"
+              domain="IoT Systems Integration"
+              title="Smart Relax Room"
+              brief="Designed and implemented an IoT-based smart relax room that optimizes ambient conditions—lighting, temperature, humidity to create a comfortable environment."
+              innovation="Integrated sensor-driven informations coupled with a machine learning model that predicts the optimal room occupancy."
+              category="Project"
+            />
+            <PortfolioItem
+              image="/SG_IMAGE.jpeg"
+              domain="Smart Grid Systems"
+              title="Smart Trading System"
+              brief="Developed a prototype that integrates smart grid data to automate energy trading using forecasting and optimization algorithms."
+              innovation="Combined forecasting and optimization techniques to enhance trading efficiency."
+              category="Project"
+            />
+            <PortfolioItem
+              image="/INTERDISC_IMAGE.jpeg"
+              domain="Healthcare Technology & DL"
+              title="Telemedicine and Skin"
+              brief="Built a telemedicine platform focused on dermatological applications, incorporating image analysis and remote consultation features."
+              innovation="Leveraged image processing methods to support diagnostic accuracy."
+              category="Project"
+            />
+            <PortfolioItem
+              image="/OR_IMAGE.jpeg"
+              domain="Operational Research"
+              title="Baggage Handling System"
+              brief="Developed a simulation model for an efficient baggage handling system, utilizing optimization techniques to minimize transfer times and improve throughput."
+              innovation="Employed multi-objective optimization strategies to balance efficiency and resource utilization."
+              category="Project"
+            />
+            <PortfolioItem
+              image="/tesi_triennale.jpeg"
+              domain="Electronic Systems Engineering"
+              title="Hardware Filter for AFM"
+              brief="Designed and implemented a custom hardware filter to enhance signal quality and resolution in atomic force microscopy."
+              innovation="Developed an innovative filter topology optimized for nanoscale measurements."
+              category="B.Sc Research"
+            />
+
+          </div>
+          
+          {/* View Complete Portfolio button */}
+          <div className="flex justify-center mt-16">
+            <a 
+              href="https://github.com/simoneterranova" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block relative"
+            >
+              <span className="text-[var(--text-color)] text-lg font-medium px-8 py-3 border-2 border-[var(--accent-color)] rounded-full inline-flex items-center gap-2 relative z-10 hover:bg-[var(--accent-color)] hover:text-white transition-colors duration-300 cursor-pointer">
+                View Github Profile
+                <ExternalLink size={16} />
+              </span>
+              <div className="absolute -inset-1 bg-[var(--accent-color)] rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CAPABILITIES Section (previously Technical Expertise) - FIXED */}
+      <section 
+        id="capabilities-section" 
+        className="themed-section w-full flex flex-col items-center pt-[92px] max-md:max-w-full pb-24 relative overflow-hidden"
+        ref={capabilitiesRef as React.RefObject<HTMLDivElement>}
+      >
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[var(--accent-color)] to-transparent opacity-5 blur-3xl rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[var(--accent-color)] to-transparent opacity-5 blur-3xl rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
+        
+        <div className="max-w-[1171px] mx-auto px-5 w-full">
+          <div className="text-center mb-16">
+            <div className="w-16 h-1 bg-[var(--accent-color)] rounded-full mb-6 mx-auto"></div>
+            <h2 className="text-[var(--accent-color)] text-center text-base font-normal leading-8 tracking-[3px] uppercase">
+              Technical Expertise
+            </h2>
+            <h3 className="text-[var(--text-color)] text-center text-4xl md:text-5xl font-extrabold leading-tight md:leading-[64px] tracking-[-1px] mt-5 px-4 max-w-3xl mx-auto">
+              Capabilities
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ServiceCard
-              icon="https://cdn.builder.io/api/v1/image/assets/TEMP/7536a91837422362247aa79c66f7364be655e3d409453097ae25df8589c8cc9d?placeholderIfAbsent=true"
+              icon={<Cpu className="w-full h-full" />}
               title="IoT Ecosystem Development"
               description="Architecting comprehensive Internet of Things solutions that seamlessly connect physical and digital worlds through intelligent sensor networks and responsive systems."
               differentiation="Each implementation is engineered for scalability, security, and real-world application."
             />
             <ServiceCard
-              icon="https://cdn.builder.io/api/v1/image/assets/TEMP/5d41cf189d2141f5c6c1f8178a5e0173ef3e4b54b8212a834222e11987d6d7f3?placeholderIfAbsent=true"
+              icon={<Activity className="w-full h-full" />}
               title="Simulation Engineering"
-              description="Designing sophisticated simulation frameworks that model complex systems, identify inefficiencies, and implement optimization algorithms for measurable performance improvements."
+              description="Designing simulation frameworks that model systems, identify inefficiencies, and implement optimization algorithms for measurable performance improvements."
               differentiation="Combining mathematical precision with practical application to deliver tangible efficiency gains."
             />
             <ServiceCard
-              icon="https://cdn.builder.io/api/v1/image/assets/TEMP/7536a91837422362247aa79c66f7364be655e3d409453097ae25df8589c8cc9d?placeholderIfAbsent=true"
+              icon={<Database className="w-full h-full" />}
               title="Advanced Analytics & ML"
               description="Transforming raw data into actionable intelligence through custom machine learning models and comprehensive analytical frameworks."
               differentiation="Focused on delivering predictive capabilities and decision support systems that drive operational excellence."
             />
           </div>
-        </div>
 
-        <div className="max-w-[1171px] mt-[60px] text-[#391400] text-center px-4 max-md:mt-10">
-          <p className="text-base font-normal leading-8">
-            Looking for technical implementation expertise in Python, Java, or C++? My programming proficiency spans multiple languages and application domains.
-          </p>
-        </div>
-      </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio-section" className="bg-[rgba(40,41,62,1)] w-full py-[94px] max-md:py-[60px]">
-        <div className="max-w-[1171px] mx-auto px-5">
-          <div className="flex justify-between items-center flex-wrap gap-5 mb-16">
-            <div>
-              <span className="text-[#EF6D58] text-base font-normal leading-8 tracking-[3px] uppercase block">
-                Portfolio
-              </span>
-              <h2 className="text-white text-3xl md:text-5xl font-extrabold leading-tight tracking-[-1px] mt-5">
-                Featured Engineering Solutions
-              </h2>
-            </div>
-            <a 
-              href="https://github.com/simoneterranova" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-white font-black text-center uppercase border px-[31px] py-[17px] rounded-md border-[rgba(255,255,255,0.296)] hover:bg-white hover:text-[rgba(40,41,62,1)] transition-colors flex items-center gap-2"
-            >
-              View Complete Portfolio
-              <ExternalLink size={16} />
-            </a>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <PortfolioItem
-              image="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              domain="IoT Architecture & ML"
-              title="Precision Indoor Positioning System"
-              brief="Engineered an intelligent indoor positioning framework leveraging wireless sensor networks and advanced machine learning algorithms to achieve sub-meter location accuracy in complex indoor environments."
-              innovation="Implementation of novel signal processing techniques to overcome traditional positioning limitations."
-              category="Current M.Sc Research"
-            />
-            <PortfolioItem
-              image="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              domain="IoT Systems Integration"
-              title="Ambient Intelligence Environment"
-              brief="Developed a comprehensive smart environment solution that dynamically optimizes ambient parameters based on real-time sensor data and user preferences."
-              innovation="Multi-parameter optimization system balancing lighting, acoustic, and thermal conditions simultaneously."
-              category="Project"
-            />
-            <PortfolioItem
-              image="https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              domain="Smart Grid Systems"
-              title="Intelligent Energy Trading Platform"
-              brief="Created an automated energy trading system utilizing real-time grid data, advanced forecasting models, and optimization algorithms to maximize efficiency and value."
-              innovation="Implementation of time-series forecasting models with adaptive learning capabilities."
-              category="Project"
-            />
-            <PortfolioItem
-              image="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              domain="Healthcare Technology"
-              title="Telemedicine Diagnostic Platform"
-              brief="Architected a specialized telemedicine solution incorporating secure data transmission, image analysis algorithms, and remote consultation functionality for dermatological applications."
-              innovation="Integration of image processing techniques with secure medical data handling protocols."
-              category="Project"
-            />
-            <PortfolioItem
-              image="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              domain="Operations Research"
-              title="High-Efficiency Logistics Simulation"
-              brief="Engineered a comprehensive simulation model for baggage handling systems, implementing custom optimization algorithms to reduce transfer times by 23%."
-              innovation="Multi-objective optimization approach balancing throughput, reliability, and resource utilization."
-              category="Project"
-            />
-            <PortfolioItem
-              image="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              domain="Electronic Systems Engineering"
-              title="Precision Instrumentation Enhancement"
-              brief="Designed and implemented a specialized hardware filter solution for atomic force microscopy, significantly enhancing signal quality and measurement resolution."
-              innovation="Novel filter topology optimized for nanoscale measurement applications."
-              category="Project"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* About Me Section */}
-      <section id="about-section" className="bg-[rgba(253,240,233,1)] py-24">
-        <div className="max-w-[1171px] mx-auto px-5">
-          <div className="text-center mb-16">
-            <h2 className="text-[#EF6D58] text-base font-normal leading-8 tracking-[3px] uppercase">
-              About Me
-            </h2>
-            <h3 className="text-[#391400] text-3xl md:text-5xl font-extrabold leading-tight md:leading-[64px] tracking-[-1px] mt-5">
-              Professional Background
-            </h3>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <img 
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a2c38714444cb191a0edee555e3cd5ac78fa81d2dea1c566a866f95a1266a84?placeholderIfAbsent=true"
-                alt="Simone Terranova Profile" 
-                className="rounded-lg w-full h-auto shadow-lg"
-              />
-            </div>
-            <div className="text-[#391400]">
-              <h4 className="text-3xl font-bold mb-6">Simone Terranova</h4>
-              <p className="text-base leading-8 mb-6">
-                As an ICT Engineer with specialized expertise in emergent technologies, I focus on creating intelligent systems that bridge theoretical capabilities with practical implementation. My academic and project work at Politecnico di Torino has established my capability to deliver sophisticated technical solutions across multiple domains.
-              </p>
-              
-              <div className="mb-6">
-                <h5 className="text-xl font-semibold mb-3">Academic Qualifications</h5>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>M.Sc. in ICT for Smart Societies, Politecnico di Torino (In progress, 2023-Present)</li>
-                  <li>B.Sc. in Electronic Engineering, Politecnico di Torino (Completed 2023)</li>
-                  <li>Scientific Lyceum, Advanced Mathematics and Physics Focus (2020)</li>
-                </ul>
-              </div>
-              
-              <div className="mb-6">
-                <h5 className="text-xl font-semibold mb-3">Technical Competencies</h5>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>IoT System Architecture & Implementation</li>
-                  <li>Simulation Engineering & Computational Optimization</li>
-                  <li>Data Analytics & Machine Learning Applications</li>
-                  <li>Multi-language Programming Proficiency (Python, Java, C++)</li>
-                  <li>Systems Integration & Collaborative Engineering</li>
-                </ul>
-              </div>
-              
-              <p className="text-base leading-8 mb-10">
-                My engineering approach centers on creating technological solutions that elegantly address complex challenges. I believe effective systems must balance technical sophistication with practical implementation, always focusing on delivering measurable value.
-              </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <a 
-                  href="https://example.com/cv" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[rgba(239,109,88,1)] text-sm text-white font-black uppercase px-8 py-4 rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors flex items-center gap-2"
-                >
-                  <Download size={16} />
-                  Download Comprehensive CV
-                </a>
-                <button
-                  onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="border border-[#391400] text-sm text-[#391400] font-black uppercase px-8 py-4 rounded-md hover:bg-[#391400] hover:text-white transition-colors flex items-center gap-2"
-                >
-                  <Calendar size={16} />
-                  Schedule Consultation
-                </button>
-              </div>
+          {/* Let's Connect button */}
+          <div className="mt-16 text-center">
+            <div className="inline-block relative group">
+              <button 
+                onClick={() => scrollToSection('contact-section')}
+                className="text-[var(--text-color)] text-lg font-medium px-8 py-3 border-2 border-[var(--accent-color)] rounded-full inline-block relative z-10 hover:bg-[var(--accent-color)] hover:text-white transition-colors duration-300 cursor-pointer"
+              >
+                Let's Connect!
+              </button>
+              <div className="absolute -inset-1 bg-[var(--accent-color)] rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section - Enhanced with clickable buttons */}
-      <section id="contact-section" className="bg-[rgba(40,41,62,1)] py-24">
-        <div className="max-w-[1140px] mx-auto px-5">
-          <div className="text-white max-w-2xl mx-auto text-center">
-            <span className="text-[#EF6D58] text-base leading-8 tracking-[3px] uppercase block">
+      {/* CONTACT Section */}
+      <section 
+        id="contact-section" 
+        className="themed-section py-24 relative overflow-hidden"
+        ref={contactRef as React.RefObject<HTMLDivElement>}
+      >
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-[var(--accent-color)] to-transparent opacity-10 blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-gradient-to-l from-[var(--accent-color)] to-transparent opacity-10 blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-[#EF6D5820] rounded-full opacity-20"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[#EF6D5830] rounded-full opacity-20"></div>
+        </div>
+        
+        <div className="max-w-[1140px] mx-auto px-5 relative z-10">
+          <div className="text-[var(--text-color)] max-w-3xl mx-auto text-center mb-16">
+            <span className="text-[var(--accent-color)] text-base leading-8 tracking-[3px] uppercase block">
               Contact
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-[-1px] mt-5 mb-7">
@@ -219,64 +212,78 @@ const Index = () => {
             <p className="text-base leading-8 mb-10">
               I welcome discussions regarding technical collaborations, research opportunities, and consulting engagements in IoT development, simulation engineering, or data analytics implementations.
             </p>
-
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
-              <a 
-                href="https://maps.app.goo.gl/SHYTEUv5g3JNzDj67" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 hover:text-[#EF6D58] transition-colors"
-              >
-                <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
-                  <MapPin className="w-6 h-6 text-[#EF6D58]" />
-                </div>
-                <span>Torino (TO), Italy</span>
-              </a>
-              
-              <a 
-                href="tel:+393809023956" 
-                className="flex items-center gap-4 hover:text-[#EF6D58] transition-colors"
-              >
-                <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
-                  <Phone className="w-6 h-6 text-[#EF6D58]" />
-                </div>
-                <span>(+39) 380 902 39 56</span>
-              </a>
-              
-              <a 
-                href="mailto:simonet835@gmail.com" 
-                className="flex items-center gap-4 hover:text-[#EF6D58] transition-colors"
-              >
-                <div className="bg-[rgba(58,60,86,1)] p-3 rounded-full">
-                  <Mail className="w-6 h-6 text-[#EF6D58]" />
-                </div>
-                <span>simonet835@gmail.com</span>
-              </a>
-            </div>
-            
-            <div className="flex justify-center mt-12">
-              <a 
-                href="https://calendly.com/simoneterranova" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-[#EF6D58] text-sm text-white font-black uppercase px-8 py-4 rounded-md hover:bg-[rgba(239,109,88,0.9)] transition-colors flex items-center gap-2"
-              >
-                <Calendar size={16} />
-                Schedule a Consultation
-              </a>
-            </div>
           </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            {/* Contact cards - location */}
+            <a 
+              href="https://maps.app.goo.gl/SHYTEUv5g3JNzDj67" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="contact-card group bg-[var(--card-bg)] backdrop-blur-sm p-8 rounded-xl border border-[var(--card-border)] flex flex-col items-center text-center transition-all duration-300 hover:bg-[var(--card-hover-bg)] hover:border-[#EF6D5850] hover:shadow-lg hover:shadow-[#EF6D5820] hover:-translate-y-1"
+            >
+              <div className="bg-[var(--accent-subtle)] p-4 rounded-full mb-5 group-hover:bg-[var(--accent-color)] transition-colors duration-300">
+                <MapPin className="w-7 h-7 text-[var(--accent-color)] group-hover:text-white transition-colors duration-300" />
+              </div>
+              <p className="text-[var(--text-muted)] group-hover:text-[var(--text-color)] transition-colors duration-300">Torino (TO), Italy</p>
+            </a>
+            
+            {/* Contact cards - email */}
+            <a 
+              href="mailto:simonet835@gmail.com" 
+              className="contact-card group bg-[var(--card-bg)] backdrop-blur-sm p-8 rounded-xl border border-[var(--card-border)] flex flex-col items-center text-center transition-all duration-300 hover:bg-[var(--card-hover-bg)] hover:border-[#EF6D5850] hover:shadow-lg hover:shadow-[#EF6D5820] hover:-translate-y-1"
+            >
+              <div className="bg-[var(--accent-subtle)] p-4 rounded-full mb-5 group-hover:bg-[var(--accent-color)] transition-colors duration-300">
+                <Mail className="w-7 h-7 text-[var(--accent-color)] group-hover:text-white transition-colors duration-300" />
+              </div>
+              <p className="text-[var(--text-muted)] group-hover:text-[var(--text-color)] transition-colors duration-300">simonet835@gmail.com</p>
+            </a>
+            
+            {/* Contact cards - GitHub */}
+            <a 
+              href="https://github.com/simoneterranova" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="contact-card group bg-[var(--card-bg)] backdrop-blur-sm p-8 rounded-xl border border-[var(--card-border)] flex flex-col items-center text-center transition-all duration-300 hover:bg-[var(--card-hover-bg)] hover:border-[#EF6D5850] hover:shadow-lg hover:shadow-[#EF6D5820] hover:-translate-y-1"
+            >
+              <div className="bg-[var(--accent-subtle)] p-4 rounded-full mb-5 group-hover:bg-[var(--accent-color)] transition-colors duration-300">
+                <Github className="w-7 h-7 text-[var(--accent-color)] group-hover:text-white transition-colors duration-300" />
+              </div>
+              <p className="text-[var(--text-muted)] group-hover:text-[var(--text-color)] transition-colors duration-300">simoneterranova</p>
+            </a>
+          </div>
+
+          {/* Add animation keyframes */}
+          <style>{`
+            @keyframes pulse-slow {
+              0%, 100% { opacity: 0.3; }
+              50% { opacity: 0.4; }
+            }
+            .animate-pulse-slow {
+              animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+            .contact-card {
+              transform: perspective(1000px) rotateY(0deg);
+              backface-visibility: hidden;
+            }
+            .contact-card:hover {
+              transform: perspective(1000px) rotateY(5deg) translateY(-4px);
+            }
+          `}</style>
         </div>
       </section>
 
       {/* Simplified Footer */}
-      <footer className="bg-[rgba(40,41,62,1)] py-12 px-5">
+      <footer className="themed-section py-12 px-5">
         <div className="max-w-[1170px] mx-auto text-center">
-          <div className="text-white text-base">
+          <div className="text-[var(--text-color)] text-base">
             Copyright © 2025 Simone Terranova. All Rights Reserved.
           </div>
         </div>
       </footer>
+      
+      {/* Scroll to top button */}
+      <ScrollToTop />
     </main>
   );
 };

@@ -1,0 +1,142 @@
+/* Global theme variables */
+:root {
+  /* Transition speeds */
+  --transition-slow: 0.8s;
+  --transition-medium: 0.5s;
+  --transition-fast: 0.3s;
+  
+  /* Section transition timing */
+  --section-reveal-delay: 0.2s;
+  
+  /* Shared accent color */
+  --accent-color: #EF6D58;
+  
+  /* Add transition for theme changes */
+  --theme-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Dark Theme (default) */
+[data-theme="dark"] {
+  /* Main colors */
+  --main-bg-color: rgba(40, 41, 62, 1);
+  --text-color: rgba(255, 255, 255, 1);
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --card-bg: rgba(58, 60, 86, 0.5);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-hover-bg: rgba(58, 60, 86, 0.8);
+  --service-card-bg: rgba(255, 255, 255, 0.05);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  
+  /* Accent effect colors */
+  --accent-glow: rgba(239, 109, 88, 0.3);
+  --accent-subtle: rgba(239, 109, 88, 0.1);
+  --accent-secondary: rgba(239, 109, 88, 0.8);
+}
+
+/* Light Theme - Updated with the requested background color */
+[data-theme="light"] {
+  /* Main colors */
+  --main-bg-color: #F3D1BF; /* Updated to the requested color */
+  --text-color: rgba(57, 20, 0, 1);
+  --text-muted: rgba(57, 20, 0, 0.7);
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(239, 109, 88, 0.1);
+  --card-hover-bg: rgba(255, 255, 255, 0.95);
+  --service-card-bg: rgba(255, 255, 255, 0.75);
+  --input-bg: rgba(255, 255, 255, 0.6);
+  
+  /* Accent effect colors */
+  --accent-glow: rgba(239, 109, 88, 0.3);
+  --accent-subtle: rgba(239, 109, 88, 0.05);
+  --accent-secondary: rgba(239, 109, 88, 0.9);
+}
+
+/* Apply consistent background color and transitions to elements */
+body {
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: var(--theme-transition);
+}
+
+/* Section transitions */
+.section-container {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity var(--transition-medium) ease-out,
+              transform var(--transition-medium) ease-out;
+}
+
+.section-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Content reveal animations for section elements */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-fast) ease-out,
+              transform var(--transition-fast) ease-out;
+}
+
+/* Make all reveal items visible by default */
+.section-container.visible .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered reveal for multiple items */
+.section-container.visible .reveal-item:nth-child(2) {
+  transition-delay: calc(var(--section-reveal-delay) * 1);
+}
+
+.section-container.visible .reveal-item:nth-child(3) {
+  transition-delay: calc(var(--section-reveal-delay) * 2);
+}
+
+.section-container.visible .reveal-item:nth-child(4) {
+  transition-delay: calc(var(--section-reveal-delay) * 3);
+}
+
+.section-container.visible .reveal-item:nth-child(5) {
+  transition-delay: calc(var(--section-reveal-delay) * 4);
+}
+
+/* Page transitions */
+.page-transition-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Create consistent section styling */
+.themed-section {
+  position: relative;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+  transition: var(--theme-transition);
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+/* Accessibility - focus styles */
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
